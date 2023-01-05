@@ -1,0 +1,136 @@
+---
+title: "MINI PROJECT"
+author: "Pooja pravinbabu"
+date: "13 March 2017"
+output: pdf_document
+---
+
+##TITLE:
+
+CODON USAGE BIAS OF AMINO ACIDS IN E.COLI
+
+##SYNOPSIS:
+
+In this paper I have explained some graphs of codon usage bias, which were made with the help of Google visualizations through R programming language. In the introduction part I have included background information about codon and codon bias, then I have explained about the data set which I used and the process went in to make the visualizations. I have also explained about the different packages I used R programming language for representing the data in various forms. Then, I have given some examples of good and bad visualizations and the reasons for why they are classified as good or bad visualizations. At last in the appendix section I have included the code.
+
+##INTRODUCTION:
+
+Deoxyribonucleic acid (DNA) consists of four nucleotide bases- Adenine (A), Thymine (T), Guanine (G) and Cytosine(C) that make up a sequence. A codon is a series of three nucleotides, which codes for single amino acid. Proteins are made up of amino acids. A DNA sequence or codon sequence is transcribed to amino acids and these amino acids are then translated to proteins. Thus a codon codes for amino acid or it can code to stop or terminate the process transcription. In this, two, three, four or six different codons can code for the same amino acid. Different codons which codes for the same amino acid are called synonymous codons. Codon usage is the number of times, that each of the synonymous codons has occurred in the DNA sequence. Codon usage bias is difference in number of times or difference in frequency in the occurrence of each of the synonymous codons in the DNA sequence. Here, I took the DNA sequence of Escherichia coli (E.coli) and have made visualizations for the codon usage bias in E.coli in the process of transcription and translation. I downloaded (.fna) format file of E.coli DNA sequence. The file consists of DNA sequence for all proteins of E.coli. I used a package called seqinr in R programming language to read the file and to separate the codon to get the frequency of each codon in the DNA sequence. Then I made a data frame which consists of 23 columns and 64 rows. The first column consists of all the triplet codon, the rest 22 column consist of single letter code of each amino acid. In each column of amino acid, zero refers to non synonymous codon of that amino acid and other numbers represent the frequency of the synonymous codon in the DNA sequence of that particular amino acid. Then I used GoogleVis (Google visualization) package in R programming language to make radar chart, area charts, scatter plot or motion charts. With the help of that package I represented the codon bias of all codons of all amino acids in a single graph.
+
+##DESCRIPTION OF VISUALIZATIONS:
+
+###RADAR CHARTS:
+![RADAR CHART to represent CODON USAGE BIAS.](/home/student/R scripts/Radar_chart.png)
+
+In Figure 1 it is hard to find the distinct amino acid's color in the graph. However, it is able to select a particular amino acid to represent in the graph. 
+Click on the legends for the amino acid which you don't want to be representing on the graph. Then you will get a picture of the one needed. Now the highest peak on the graph shows the codon which has been used most for the production of that amino acid. 
+
+![RADAR CHART to represent CODON USAGE BIAS.](/home/student/R scripts/radarchart.png)
+
+For example, if you want to check the codon bias for the amino acid Arginine (single letter code = R), then click on (strike out) all other amino acids in the legend. Then, you will be left with the graph for the amino acid Arginine (figure 2). Now you can easily check the highest peak and thus the DNA is biased to that codon (in this case it’s cgc) for that amino acid. You can also move the cursor to the peak to check the frequency of the occurrence of the codon.
+
+###AREA CHART:
+![AREA CHART to represent CODON USAGE BIAS.](/home/student/R scripts/Stacked_area_chart.png)
+
+Figure 3 is an area graph. In this, the different colored bar represents frequency of synonymous codons in the DNA sequence of different amino acids. On the right side of the graph there is a legend, which gives unique color for each of the single letter code of amino acid. If we move the cursor to the highest level of the area of a particular color, it gives the most frequently occurred codon among the synonymous codons of that amino acid in the DNA sequence. Thus, the DNA sequence is biased towards using that particular codon over other codons which codes for the same amino acid. For example, if we want to check the codon bias for the amino acid Arginine (single letter code = R), press the color of that amino acid in the legend. Then, the colored area of that amino acid in the graph will become lighter in shade. You can also move the cursor to the highest level of the area of that particular color to check the frequency of the occurrence of the codon among the synonymous codons of that amino acid. Among six other codons cgc has occurred 102565 times in the DNA sequence of E.coli. This is an example of codon bias.
+
+
+
+###SCATTER CHART
+
+Then, if we press more chart options button on the top of the page and press more recommended charts in that, we can see an option called scatter. If we press that it will show two options - Scatter chart, Bubble chart and click on scatter chart.
+
+![SCATTER CHART to represent CODON USAGE BIAS.](/home/student/R scripts/Scatter_chart_plot.png)
+
+Figure 4 shows scatter chart. It works same as the area chart. For example, if we want to check the codon bias for the amino acid Arginine (single letter code = R), press the color of that amino acid in the legend. Then that colored points will show up separately in the chart and then we have to move the cursor to the point of that color which occupies the highest position in the graph. In this case it is green color and if we have to move the cursor to the point which is in the highest position in the graph of that color, it shows R, cgc 102565. This shows cgc has occurred 102565, which codes for amino acid R (Arginine) and E.coli’s DNA sequence is biased to cgc to code Arginine as this codon has occurred more number of times among other synonymous codons, which codes for the same amino acid.
+
+
+
+
+###MOTION CHART
+
+Then if we press trend option on the left and click on motion chart to view the graph.
+
+![MOTION CHART to represent CODON USAGE BIAS.](/home/student/R scripts/Motion_chart.png)
+
+![MOTION BAR CHART to represent CODON USAGE BIAS.](/home/student/R scripts/Motion_bar_chart.png)
+
+
+
+Figure 5 shows Motion chart. Press size option in that and change it to same size and color to unique colors. Then, click the box which is below the chart and change that option to Order: Alphabetical. Then, the box towards the left side is to select the amino acid. If we select one amino acid for example R then six points comes up in the chart. Then if we move the cursor to the point which is in the highest position in the graph, it shows cgc 102565. This means cgc has occurred 102565. Or we can select bar chart option, which is in the top right corner of the graph. Then we can select the amino acid in the same basis and we can move the cursor to the tallest bar in the graph to see the most frequently occurred codon, coding for that amino acid (Figure 6). 
+
+
+
+
+
+##SUMMARY:
+
+There are many other chart options in that. However, many of them are not as informative, clear and appealing as radar charts, area charts, scatter plot or motion charts. For example, radar chart in line option is appealing but is not clear (Figure 7). The color of the amino acid won’t get highlighted and it is hard to match the color of amino acid in the legend to the chart. However, if the colors were distinct, then it would have been the best chart to explain codon usage bias. However, Figure 1 is a radar chart in which we can choose the amino acid which we want to check and then the graph shows the information of only of that amino acid and this now is clear, informative and appealing. There is smooth line chart in line option it is not clear and is very confusing for the reader (Figure 8). Because, for some curves it is hard to find the peak and see the frequently occurred codon, which takes time then in finding it in area charts, scatter plot or motion charts (eg: for T). There is bar chart in bar option; this is clear but not very attractive (Figure 9).
+
+Thus, it is important to choose a visualization which is more attractive, more clear and informative. It is also important that if we know the terms of the labels in the graph, then the graph should be self explanatory. All these features make a good visualization to represent the data.
+
+![RADAR CHART to represent CODON USAGE BIAS.](/home/student/R scripts/Radar_chart_1.png)
+
+![SMOOTH LINE CHART to represent CODON USAGE BIAS.](/home/student/R scripts/Smooth_chart.png)
+
+![BAR CHART to represent CODON USAGE BIAS.](/home/student/R scripts/Bar_chart.png)
+
+##APPENDIX:
+
+```{r  message=F,comment=NA,warning=F}
+library(seqinr)
+library(dplyr)
+e_coli=read.fasta("/home/student/R scripts/Pooja/E_coli.fna")
+e_coliseq=unlist(e_coli)
+codon_usage=seqinr::count(e_coliseq,3)
+codon_usage_df=as.data.frame(codon_usage)
+codon_usage_df$amino_acid=NA
+for (i in 1:64){
+  codon_usage_df[i,3]=translate(unlist(strsplit(as.character(
+    codon_usage_df$Var1[i]),"")))
+}
+codon_usage_col_df=data.frame(base=codon_usage_df$Var1)
+single_letter_aa=unique(codon_usage_df$amino_acid)
+unmelt<-function(df) {
+  for(i in single_letter_aa){
+    df[i]=NA
+    for (i in 1:64){
+      trans=translate(unlist(strsplit(as.character(codon_usage_df$Var1[i]),"")))
+      if (trans==colnames(df)[length(colnames(df))]){
+        df[i,length(colnames(df))]=codon_usage_df$Freq[i]
+      }else{
+        df[i,length(colnames(df))]=0
+      }
+    }
+  }
+  return(df)
+}
+codon_usage_change_df=unmelt(codon_usage_col_df)
+
+
+library(googleVis)
+
+charts=plot(gvisSteppedAreaChart(codon_usage_change_df,xvar = "base",
+                          yvar = single_letter_aa, 
+                          options=list(title="CODON USAGE BIAS",
+                                       titleTextStyle="{
+                                       fontName:'Courier',
+                                       fontSize:16}",
+                                       vAxes="[{title:'FREQUENCY',
+                             textPosition: 'out'}]",
+                                       hAxes="[{title:'TRIPLET CODON',
+                             textPosition: 'out'}]",
+                                       width=860, height=500,
+                                       gvis.editor="MORE CHART OPTIONS"
+                          ),
+                          chartid = "BarChartIDac252c353d7 "))
+
+library(radarchart)
+radar=chartJSRadar(codon_usage_change_df)
+
+
+```
+
+
+
+
